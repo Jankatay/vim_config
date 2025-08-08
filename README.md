@@ -5,7 +5,7 @@ Copy contents of ./vim/ to ~/.vim/ and cd into it. (Make a backup of your previo
 # backup your ~/.vim folder if you have another configuration already.
 
 # update package manager
-sudo apt update && sudo apt ugprade -y
+sudo apt update && sudo apt upgrade -y
 
 # clone the file from github
 git clone https://github.com/Jankatay/vim_config.git
