@@ -7,9 +7,11 @@ cp -r ~/.vim ~/.vim_backup
 
 # clone the file from github
 git clone https://github.com/Jankatay/vim_config.git
+cd vim_config 
+git submodule init
+git submodule update
 
 # move the contents
-cd vim_config 
 mv ./vim/* ~/.vim/
 cd ~/.vim
 ```
