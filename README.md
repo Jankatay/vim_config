@@ -3,7 +3,10 @@
 Copy contents of ./vim/ to ~/.vim/ and cd into it. (Make a backup of your previous .vim if necessary)
 ```
 # optional backup
-cp -r ~/.vim ~/.vim_backup 
+cp -r ~/.vim ~/.vim_backup
+
+# update package manager
+sudo apt update && sudo apt ugprade -y
 
 # clone the file from github
 git clone https://github.com/Jankatay/vim_config.git
