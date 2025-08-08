@@ -43,6 +43,7 @@ fi
 # Rust
 if [[ $(yes_or_no "Install rust? (and rust autocorrect)") -eq 0 ]]; then
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  source ~/.basrhc
   echo
   press_anything "quit vim after coc is done"
   vim +"CocInstall coc-rust-analyzer"
