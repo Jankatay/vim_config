@@ -16,6 +16,7 @@ git submodule update
 
 # move the contents
 mv ./vim ~/.vim
+rm -rf ../vim_config
 cd ~/.vim
 ```
 
