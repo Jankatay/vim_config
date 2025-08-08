@@ -2,8 +2,6 @@
 
 Copy contents of ./vim/ to ~/.vim/ and cd into it. (Make a backup of your previous .vim if necessary)
 ```
-# backup your ~/.vim folder if you have another configuration already.
-
 # update package manager
 sudo apt update && sudo apt upgrade -y
 
