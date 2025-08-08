@@ -2,8 +2,15 @@
 
 Copy contents of ./vim/ to ~/.vim/ and cd into it. (Make a backup of your previous .vim if necessary)
 ```
-cp -r ~/.vim ~/.vim_backup # optional backup
-cp -r ./vim ~/.vim
+# optional backup
+cp -r ~/.vim ~/.vim_backup 
+
+# clone the file from github
+git clone https://github.com/Jankatay/vim_config.git
+
+# move the contents
+cd vim_config 
+mv ./vim ~/.vim
 cd ~/.vim
 ```
 
