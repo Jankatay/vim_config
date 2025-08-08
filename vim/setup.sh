@@ -38,6 +38,7 @@ if [[ $(yes_or_no "Install ghcup and hls? (haskell tool installer and haskell au
   curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
   source ~/.bashrc
   echo
+  ghcup hls
 fi
 
 # Rust
