@@ -10,7 +10,7 @@ git clone https://github.com/Jankatay/vim_config.git
 
 # move the contents
 cd vim_config 
-mv ./vim ~/.vim
+mv ./vim/* ~/.vim/
 cd ~/.vim
 ```
 
