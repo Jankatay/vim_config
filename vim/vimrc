@@ -1,0 +1,64 @@
+" 64 line minimalist vim config with autocomplete
+
+" mix
+syntax on
+set fileformat=unix
+set encoding=UTF-8
+set nobackup 
+set nowritebackup
+set relativenumber
+set number
+
+" tabs
+set shiftwidth=2 smarttab
+set expandtab
+set tabstop=11 softtabstop=0 " normal tabs are 11 spaces to make it obvious something got messed up
+
+" lsp
+" Mostly taken from https://raw.githubusercontent.com/neoclide/coc.nvim/master/doc/coc-example-config.vim
+
+"" TAB completion
+"" <C-g>u breaks current undo
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+"" shortcuts
+nmap <silent><nowait> gd <Plug>(coc-definition)
+nmap <silent><nowait> gy <Plug>(coc-type-definition)
+nmap <silent><nowait> gi <Plug>(coc-implementation)
+nmap <silent><nowait> gr <Plug>(coc-references)
+
+"" documentation
+nnoremap <silent> K :call ShowDocumentation()<CR>
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+
+"" Scroll with control-k control-j
+if has('nvim-0.4.0') || has('patch-8.2.0750')
+  nnoremap <silent><nowait><expr> <C-j>  coc#float#scroll(1)
+  nnoremap <silent><nowait><expr> <C-k> coc#float#scroll(0)
+  inoremap <silent><nowait><expr> <C-j>  coc#float#scroll(1)
+  inoremap <silent><nowait><expr> <C-k> coc#float#scroll(0)
+  vnoremap <silent><nowait><expr> <C-j>  coc#float#scroll(1)
+  vnoremap <silent><nowait><expr> <C-k> coc#float#scroll(0)
+endif
+
+""" :Format command
+command! -nargs=0 Format :call CocActionAsync('format')
+
+" colorscheme
+colorscheme slate " catppuccin seems to not be working that well 3;
