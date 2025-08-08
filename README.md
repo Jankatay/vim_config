@@ -12,6 +12,7 @@ git submodule init
 git submodule update
 
 # move the contents
+mkdir ~/.vim
 mv ./vim/* ~/.vim/
 cd ~/.vim
 ```
