@@ -28,7 +28,7 @@ yes_or_no "Install ccls? (C/C++ autocorrect)" && sudo apt install ccls
 # Python3
 yes_or_no "Install python3-pylsp? (python autocorrect)"
 if [[ $? == 0 ]]; then
-  echo
+  sudo apt install python3-pylsp
   press_anything "quit vim after coc is done"
   vim +"CocInstall @yaegassy/coc-pylsp"
 fi
