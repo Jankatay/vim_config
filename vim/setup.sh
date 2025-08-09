@@ -34,7 +34,7 @@ if [[ $? == 0 ]]; then
 fi
 
 # Haskell
-yes_or_no "Insatll ghcup and hls? (haskell tool installre and haskell autocorrect)"
+yes_or_no "Insatll ghcup and hls? (haskell tool installer and haskell autocorrect)"
 if [[ $? == 0 ]]; then
   curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
   echo "please run \"ghcup install gls\" in another shell"
