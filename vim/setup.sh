@@ -37,17 +37,14 @@ fi
 yes_or_no "Insatll ghcup and hls? (haskell tool installre and haskell autocorrect)"
 if [[ $? == 0 ]]; then
   curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
-  echo
-  source ~/.bashrc
-  ghcup install hls
+  echo "please run \"ghcup install gls\" in another shell"
+  # ghcup install hls
 fi
 
 # Rust
 yes_or_no "Install rust? (and rust autocorrect)"
 if [[ $? == 0 ]]; then
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-  source ~/.bashrc
-  echo
   press_anything "quit vim after coc is done"
   vim +"CocInstall coc-rust-analyzer"
 fi
